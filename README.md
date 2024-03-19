@@ -4,14 +4,15 @@ CSCI 5117, Spring 2024, [assignment description](https://canvas.umn.edu/courses/
 
 ## App Info:
 
-* Team Name: TODO
+* Team Name: airfox
 * App Name: TODO
 * App Link: <https://TODO.com/>
 
 ### Students
 
+* Peter Du, du000246@umn.edu
 * First Last, x500@umn.edu
-* ...
+* Minh Uyen Nguyen, nguy5105@umn.edu
 
 
 ## Key Features
