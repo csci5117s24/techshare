@@ -1,13 +1,9 @@
-# Streamlined devlopment and deployment experience with auto testing and CI/CD
+# Testing
 
-## Linting
-## Testing
-## Building
-```
-npm install --save-dev jest
-```
-
-
-
+## outline
+ - installation
+ - setup
+ - simple test cases
+ - React Component testing
 ## reference
  - https://jestjs.io/
