@@ -23,9 +23,9 @@ const App = () => {
 
 
       <div>
-          <input value={name} onChange={e=>setName(e.target.value)} placeholder="Name"></input>
-          <input value={quant} onChange={e=>setQuant(e.target.value)} placeholder="Quantity"></input>
-          <input value={expDate} onChange={e=>setExpDate(e.target.value)} placeholder="Expiry: MM/DD/YYYY"></input>
+          <input id="name" value={name} onChange={e=>setName(e.target.value)} placeholder="Name"></input>
+          <input id="quant" value={quant} onChange={e=>setQuant(e.target.value)} placeholder="Quantity"></input>
+          <input id="exp" value={expDate} onChange={e=>setExpDate(e.target.value)} placeholder="Expiry: MM/DD/YYYY"></input>
           <button onClick={newData}>Add Item</button>
       </div>
     </>
