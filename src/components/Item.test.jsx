@@ -1,9 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Item from "./Item";
 
-const sum = (a, b) => {
-  return a + b
-}
 
 test('render content', () => {
   const datum = {
