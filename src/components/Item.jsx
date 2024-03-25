@@ -1,3 +1,5 @@
+import React from "react";
+
 const Item = ({ datum }) => {
   return (
     <div className="item">
