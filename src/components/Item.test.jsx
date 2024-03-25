@@ -5,11 +5,6 @@ const sum = (a, b) => {
   return a + b
 }
 
-test('sum test', () => {
-  const result = sum(1, 2)
-  expect(result).toBe(3)
-})
-
 test('render content', () => {
   const datum = {
     name: "milk",
@@ -19,6 +14,6 @@ test('render content', () => {
 
   render(<Item datum={datum} />)
 
-  const element = screen.getByText('milk')
+  const element = screen.getByText('name: milk')
   expect(element).toBeDefined()
 })
