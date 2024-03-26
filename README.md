@@ -8,12 +8,11 @@
  - [Setup](#setup)
  - [Simple Test Cases](#simple-test-cases)
  - [React Component Testing](#react-component-testing)
-
  ### Introduction
  Software Testing is primarily aimed to ensure that the software system behaves as expected. It helps to ensure that the changes to the code base doesn't break existing functionality. Further, it helps improve developer efficiency especially in team settings by ensuring commits from one team member doesn't break the functionality implemented by other developers. There are various types of testing. Some of them are included below
  1. **Unit Testing:** Testing individual software components at a function or class level. This typically involves ensuring expected outputs for various test inputs.
  2. **Integration Testing:** Testing if different software components interact well with each other so that they work together as expected. 
- 3. **Functional Testing:** It focuses on the business requirements of an application and ensure the output of an action is expected.
+ 3. **Functional Testing:** It focuses on the business requirements of an application and ensure the output of an action is as expected.
  4. **Regression Testing:** These tests focus on ensuring the new changes doesn't break previous developed and tested software.
  5. **End-to-End Testing:** Testing at application level that simulate real world scenarios.
 
@@ -36,12 +35,47 @@ npm install --save-dev @testing-library/react @testing-library/jest-dom
 **Note:** --save-dev tells npm to place these installed packages in the devDependencies section of the package.json 
 
 ### Setup
+To run the tests we need to add the following to the package.json file
+```
+{
+  "scripts": {
+    // ...
+    "test": "vitest run"
+  }
+  // ...
+}
+```
+To reset the jsdom that is emulating the browser after each test create `testSetup.js` file in the root of the project with the following content
 
- ### Simple Test Cases
+```
+import { afterEach } from 'vitest'
+import { cleanup } from '@testing-library/react'
+import '@testing-library/jest-dom/vitest'
+
+afterEach(() => {
+  cleanup()
+})
+
+```
+
+One last thing in our setup is to configure vitest to use testSetup.js. Add the following content to the `vite.config.js` file in the project root folder.
+
+```
+export default defineConfig({
+  // ...
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './testSetup.js', 
+  }
+})
+```
+
+### Simple Test Cases
 
 
- ### React Component Testing
+### React Component Testing
 
 
-## reference
+## References
  - [https://vitest.dev/](https://vitest.dev/)
