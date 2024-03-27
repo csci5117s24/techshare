@@ -11,9 +11,13 @@ const App = () => {
   const [itemData, setItemData] = useState(data);
   
   function newData(){
-    let arrayLen = itemData.length;
-    const newItem = {id:arrayLen+1, name:name, quantity:quant, expireDate:expDate};
-    setItemData([...itemData, newItem]);
+    // let arrayLen = itemData.length;
+    // const newItem = {id:arrayLen+1, name:name, quantity:quant, expireDate:expDate};
+    // setItemData([...itemData, newItem]);
+    setItemData([...data, {id: data.length + 1, name: name, quantity: quant, expireDate: expDate}])
+    setName('')
+    setQuant('')
+    setExpDate('')
   }
 
   return (
