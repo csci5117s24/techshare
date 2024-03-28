@@ -2,11 +2,11 @@ import React from "react";
 
 const Item = ({ datum }) => {
   return (
-    <div className="item">
+    <li className="item">
       <p>name: {datum.name}</p>
       <p>quantity: {datum.quantity}</p>
       <p>expireDate: {datum.expireDate}</p>
-    </div>
+    </li>
   )
 }
 

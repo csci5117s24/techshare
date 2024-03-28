@@ -23,7 +23,9 @@ const App = () => {
   return (
     <>
       <h1>Fridge Tracker</h1>
-      {itemData.map(datum => <Item key={datum.id} datum={datum} />)}
+      <ul>
+        {itemData.map(datum => <Item key={datum.id} datum={datum} />)}
+      </ul>
 
 
       <div>
