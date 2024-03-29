@@ -118,7 +118,7 @@ We can use unit tests to check if the method is working as expected with differe
  ```
 
 ### React Component Testing
-Assume we have a React component called `Item`. This component takes in a single prop, datum, and its structure is represented by a JSX (JavaScript XML) which contains some HTML code. It renders a list item (<li>) with a class name of "item". Inside the list item, there are three paragraphs (<p>), each displaying different properties of the datum object passed as props. These properties are name, quantity, and expireDate.
+Assume we have a React component called `Item`. This component takes in a single prop, datum, and its structure is represented by a JSX (JavaScript XML) which contains some HTML code. It renders a list item (\<li\>) with a class name of "item". Inside the list item, there are three paragraphs (\<p\>), each displaying different properties of the datum object passed as props. These properties are name, quantity, and expireDate.
 
  ``` js
   // Item.jsx
