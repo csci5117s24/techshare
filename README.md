@@ -85,6 +85,14 @@ export default defineConfig({
 ```
 ## Examples
 ### Unit Testing
+Let's say we have a javascript file called sum.js containing a method, sum(), that calculates the sum of two numbers given as inputs (a, b). We can use unit tests to check if the method is working as expected with different types of inputs:
+
+1. Import the function to be tested from it's source file.
+2. Each test will be consist of a call to test(), which takes in two inputs: the test name and a function to run.
+3. The result obtained from the method we are testing can be stored in a const variable. 
+4. To check whether this result matches the expected output, we use expect(result).toBe(expectedResult).
+
+
  ``` js
   // sum.js
   const sum = (a, b) => a + b
