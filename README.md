@@ -13,7 +13,7 @@
     - [React Component Testing](#react-component-testing)
     - [Integration Testing](#integration-testing)
     - [Regression Testing](#regression-testing)
-    - [Testing Coverage](#testing-coverage)
+    - [Testing Coverage](#test-coverage)
   - [References](#references)
  ## Introduction
  Software Testing is primarily aimed to ensure that the software system behaves as expected. It helps to ensure that the changes to the code base doesn't break existing functionality. Further, it helps improve developer efficiency especially in team settings by ensuring commits from one team member doesn't break the functionality implemented by other developers. There are various types of testing. Some of them are included below
@@ -286,8 +286,18 @@ export default AddItem
   export default App;
  ```
 
-### Testing Coverage
-By adding the coverage script in our `package.json`, we could use `npm run coverage` to see our testing coverage.
+### Test Coverage
+
+Test Coverage is a measure of what percent of the code is covered through tests. To effectively maintain large projects we need high code coverage.
+
+VITEST needs `@vitest/coverage-v8` package to get test coverage results. It can be installed through 
+
+``` shell
+npm install --save-dev @vitest/coverage-v8
+```
+
+By adding the coverage script in our `package.json`, we could use `npm run coverage` to see our testing coverage. 
+
 ``` json
 {
   "scripts": {
@@ -298,6 +308,9 @@ By adding the coverage script in our `package.json`, we could use `npm run cover
   // ...
 }
 ```
+
+Below are the coverage results for this sample react project created for this article. We could see that across all the files `90% `of the lines are covered through some form of tests
+
 
 ``` shell
  $ npm run coverage
