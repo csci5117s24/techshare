@@ -16,7 +16,7 @@
     "test": "vitest run",
     "eject": "react-scripts eject",
     "lint": "eslint ./src/components",
-    "coverage": "vitest run --coverage ./src/components"
+    "coverage": "vitest run --coverage"
   },
   "eslintConfig": {
     "extends": [

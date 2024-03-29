@@ -12,6 +12,7 @@
     - [React Component Testing](#react-component-testing)
     - [Integration Testing](#integration-testing)
     - [Regression Testing](#regression-testing)
+    - [Testing Coverage](#testing-coverage)
   - [References](#references)
  ### Introduction
  Software Testing is primarily aimed to ensure that the software system behaves as expected. It helps to ensure that the changes to the code base doesn't break existing functionality. Further, it helps improve developer efficiency especially in team settings by ensuring commits from one team member doesn't break the functionality implemented by other developers. There are various types of testing. Some of them are included below
@@ -35,7 +36,7 @@ npm install --save-dev vitest jsdom
 To render react components for testing we need to install [react-testing-library](https://github.com/testing-library/react-testing-library). Further [jest-dom](https://github.com/testing-library/jest-dom) package makes testing much easier by providing an easy to use api for asserting various things about the state of the DOM. We can install these by 
 
 ``` shell
-npm install --save-dev @testing-library/react @testing-library/jest-dom
+npm install --save-dev @testing-library/react @testing-library/jest-dom @vitest/coverage-v8 @vitejs/plugin-react
 ```
 **Note:** --save-dev tells npm to place these installed packages in the devDependencies section of the package.json 
 
@@ -210,6 +211,9 @@ export default defineConfig({
 
  ```
 ### Regression Testing
+Now we want to seperate adding item from our App.jsx. We simply create another component called AddItem.jsx and if everything is correct, we should get the same result as before.
+
+By running `npm run test` again, we can see we've passed all the test cases defined before so everything works fine after our refactoring.
  ``` js
   // AddItem.jsx
   import React from "react";
@@ -268,6 +272,52 @@ export default AddItem
   export default App;
  ```
 
+### Testing Coverage
+By adding the coverage script in our `package.json`, we could use `npm run coverage` to see our testing coverage.
+``` json
+{
+  "scripts": {
+    // ...
+    "test": "vitest run",
+    "coverage": "vitest run --coverage"
+  }
+  // ...
+}
+```
+
+``` shell
+ $ npm run coverage
+
+ ✓ src/components/sum.test.js (2)
+ ✓ src/components/Item.test.jsx (1)
+ ✓ src/components/Button.test.jsx (1)
+ ✓ src/App.test.jsx (1)
+
+ Test Files  4 passed (4)
+      Tests  5 passed (5)
+   Start at  15:09:18
+   Duration  1.23s (transform 131ms, setup 1.27s, collect 176ms, tests 190ms, environment 1.71s, prepare 301ms)
+
+ % Coverage report from v8
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------|---------|----------|---------|---------|-------------------
+All files       |      90 |    92.85 |    90.9 |      90 |                   
+ src            |   80.35 |    66.66 |      50 |   80.35 |                   
+  App.jsx       |     100 |      100 |     100 |     100 |                   
+  index.js      |       0 |        0 |       0 |       0 | 1-11              
+  mock.js       |     100 |      100 |     100 |     100 |                   
+ src/components |     100 |      100 |     100 |     100 |                   
+  AddItem.jsx   |     100 |      100 |     100 |     100 |                   
+  Button.jsx    |     100 |      100 |     100 |     100 |                   
+  Item.jsx      |     100 |      100 |     100 |     100 |                   
+  sum.js        |     100 |      100 |     100 |     100 |                   
+----------------|---------|----------|---------|---------|-------------------
+```
+
 
 ## References
  - [https://vitest.dev/](https://vitest.dev/)
+ - [https://fullstackopen.com](https://fullstackopen.com)
+ - [https://legacy.reactjs.org/docs/testing.html](https://legacy.reactjs.org/docs/testing.html)
+ - [https://testing-library.com/docs/react-testing-library/intro/](https://testing-library.com/docs/react-testing-library/intro/)
