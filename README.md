@@ -11,9 +11,11 @@
   - [Examples](#examples)
     - [Unit Testing](#unit-testing)
     - [React Component Testing](#react-component-testing)
+      - [Item Component](#item-component)
+      - [Button Component](#button-component)
     - [Integration Testing](#integration-testing)
     - [Regression Testing](#regression-testing)
-    - [Testing Coverage](#test-coverage)
+    - [Test Coverage](#test-coverage)
   - [References](#references)
  ## Introduction
  Software Testing is primarily aimed to ensure that the software system behaves as expected. It helps to ensure that the changes to the code base doesn't break existing functionality. Further, it helps improve developer efficiency especially in team settings by ensuring commits from one team member doesn't break the functionality implemented by other developers. There are various types of testing. Some of them are included below
@@ -213,6 +215,7 @@ test('button test', () => {
 })
 ```
 ### Integration Testing
+Here we want test the integration between our components. We added some text fields and button for adding a new item and we are expecting the number of `<li></li>` in `<ul></ul>` is increased by one after adding and the added item is rendered successfully.
  ``` js
   // App.jsx
   import './App.css';
@@ -255,6 +258,8 @@ test('button test', () => {
   export default App;
 
  ```
+ We first check the button is rendered correctly and so are the text fields.
+ Then we added some text in the fields by using `fireEvent`. After adding the text to the fields we clicked the button and we expect the number of `<li>` in our `<ul>` is increased by one by comparing the length before and after. Finally, we make sure that the new item is rendered successfully.
  ``` js
   // App.test.jsx
   import { fireEvent, render, screen } from "@testing-library/react"
