@@ -191,7 +191,9 @@ To ensure that the Button component behaves as expected, we can write component 
 2. Import the *render* and *screen* libraries from the react testing library, *act* from the react-dom library.
 3. Import the component from its source code file.
 4. Each test will be consist of a call to test(), which takes in two inputs: the test name and a function to run.
-5. Use screen.getByRole('button') to find the button element rendered in the component. By default \<button /\> has the button role without explicitly setting the role attribute. 
+5. Use screen.getByRole('button') to find the button element rendered in the component. By default \<button /\> has the button role without explicitly setting the role attribute.
+6. Ensure that the button element is defined and exists in the component with expect(element).toBeDefined().
+7. Using expect(element).toHaveTextContent(*text*) we can check the value of the element so that we verify that the button initially displays the text content 'false'. After clicking the button (simulated by act(() => element.click()), check that the button now displays the text content 'true'. This verifies that the button's state has been updated correctly.
 
 ``` js
 // Button.test.jsx
