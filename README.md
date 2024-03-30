@@ -118,6 +118,8 @@ We can use unit tests to check if the method is working as expected with differe
  ```
 
 ### React Component Testing
+
+**Item Component**
 Assume we have a React component called `Item`. This component takes in a single prop, datum, and its structure is represented by a JSX (JavaScript XML) which contains some HTML code. It renders a list item (\<li\>) with a class name of "item". Inside the list item, there are three paragraphs (\<p\>), each displaying different properties of the datum object passed as props. These properties are name, quantity, and expireDate.
 
  ``` js
@@ -165,7 +167,22 @@ To test whether a component, in this case Item, is being rendered correctly, we 
     expect(element).toBeDefined()
   })
  ```
+**Button Component**
+``` js
+// Button.jsx
+import React from "react"
+import { useState } from "react"
 
+const Button = () => {
+    const [pressed, setPressed] = useState(false)
+    
+    return (
+        <button onClick={() => setPressed(!pressed)}>{pressed ? 'true' : 'false'}</button>
+    )
+}
+
+export default Button
+```
 ### Integration Testing
  ``` js
   // App.jsx
