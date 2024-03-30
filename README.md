@@ -168,6 +168,8 @@ To test whether a component, in this case Item, is being rendered correctly, we 
   })
  ```
 #### Button Component
+In this example, we have a `Button` component, which represents a clickable area that performs an action when interacted with by users. In this case, the action consists of swapping between true or false (i.e. if the state is currently true, change to false, and viceversa).
+
 ``` js
 // Button.jsx
 import React from "react"
@@ -183,6 +185,13 @@ const Button = () => {
 
 export default Button
 ```
+To ensure that the Button component behaves as expected, we can write component tests that check its initial rendering and its behavior after a user interaction. Below is a basic example of a test case:
+
+1. Create a new file called *componentName*.test.jsx, in this example it should be "Button.test.jsx".
+2. Import the *render* and *screen* libraries from the react testing library, *act* from the react-dom library, and *expect* from vitest.
+3. Import the component from its source code file.
+4. Each test will be consist of a call to test(), which takes in two inputs: the test name and a function to run.
+5. 
 
 ``` js
 // Button.test.jsx
